@@ -84,19 +84,22 @@
 
 
 
-<meta name="description" content="397. Integer ReplacementGiven a positive integer n and you can do operations as follow:
-If n is even, replace n with n/2.If n is odd, you can replace n with either n + 1 or n - 1.What is the minimum n">
+<meta name="description" content="59. Spiral Matrix IIGiven an integer n, generate a square matrix filled with elements from 1 to n * n in spiral order.
+For example,Given n = 3,
+You should return the following matrix:12345[ [ 1, 2, 3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 397. Integer Replacement">
-<meta property="og:url" content="http://yoursite.com/2016/12/25/LeetCode-397-Integer-Replacement/index.html">
+<meta property="og:title" content="[LeetCode] 59. Spiral Matrix II">
+<meta property="og:url" content="http://yoursite.com/2016/12/25/LeetCode-59-Spiral-Matrix-II/index.html">
 <meta property="og:site_name" content="KrayC's Blog">
-<meta property="og:description" content="397. Integer ReplacementGiven a positive integer n and you can do operations as follow:
-If n is even, replace n with n/2.If n is odd, you can replace n with either n + 1 or n - 1.What is the minimum n">
-<meta property="og:updated_time" content="2016-12-25T12:52:56.000Z">
+<meta property="og:description" content="59. Spiral Matrix IIGiven an integer n, generate a square matrix filled with elements from 1 to n * n in spiral order.
+For example,Given n = 3,
+You should return the following matrix:12345[ [ 1, 2, 3">
+<meta property="og:updated_time" content="2016-12-25T14:16:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 397. Integer Replacement">
-<meta name="twitter:description" content="397. Integer ReplacementGiven a positive integer n and you can do operations as follow:
-If n is even, replace n with n/2.If n is odd, you can replace n with either n + 1 or n - 1.What is the minimum n">
+<meta name="twitter:title" content="[LeetCode] 59. Spiral Matrix II">
+<meta name="twitter:description" content="59. Spiral Matrix IIGiven an integer n, generate a square matrix filled with elements from 1 to n * n in spiral order.
+For example,Given n = 3,
+You should return the following matrix:12345[ [ 1, 2, 3">
 
 
 
@@ -124,13 +127,13 @@ If n is even, replace n with n/2.If n is odd, you can replace n with either n + 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/25/LeetCode-397-Integer-Replacement/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/25/LeetCode-59-Spiral-Matrix-II/"/>
 
 
 
 
 
-  <title> [LeetCode] 397. Integer Replacement | KrayC's Blog </title>
+  <title> [LeetCode] 59. Spiral Matrix II | KrayC's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +274,7 @@ If n is even, replace n with n/2.If n is odd, you can replace n with either n + 
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/25/LeetCode-397-Integer-Replacement/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/25/LeetCode-59-Spiral-Matrix-II/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="KrayC">
@@ -295,7 +298,7 @@ If n is even, replace n with n/2.If n is odd, you can replace n with either n + 
             
             
               
-                [LeetCode] 397. Integer Replacement
+                [LeetCode] 59. Spiral Matrix II
               
             
           </h1>
@@ -308,7 +311,7 @@ If n is even, replace n with n/2.If n is odd, you can replace n with either n + 
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T20:50:31+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T22:14:39+08:00">
                 2016-12-25
               </time>
             
@@ -342,8 +345,8 @@ If n is even, replace n with n/2.If n is odd, you can replace n with either n + 
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/25/LeetCode-397-Integer-Replacement/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/25/LeetCode-397-Integer-Replacement/" itemprop="commentCount"></span>
+                <a href="/2016/12/25/LeetCode-59-Spiral-Matrix-II/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/25/LeetCode-59-Spiral-Matrix-II/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,14 +376,11 @@ If n is even, replace n with n/2.If n is odd, you can replace n with either n + 
       
 
       
-        <h1 id="397-Integer-Replacement"><a href="#397-Integer-Replacement" class="headerlink" title="397. Integer Replacement"></a>397. Integer Replacement</h1><p>Given a positive integer n and you can do operations as follow:</p>
-<p>If n is even, replace n with n/2.<br>If n is odd, you can replace n with either n + 1 or n - 1.<br>What is the minimum number of replacements needed for n to become 1?</p>
-<p>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Input:</div><div class="line">8</div><div class="line"></div><div class="line">Output:</div><div class="line">3</div><div class="line"></div><div class="line">Explanation:</div><div class="line">8 -&gt; 4 -&gt; 2 -&gt; 1</div></pre></td></tr></table></figure></p>
-<p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Input:</div><div class="line">7</div><div class="line"></div><div class="line">Output:</div><div class="line">4</div><div class="line"></div><div class="line">Explanation:</div><div class="line">7 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1</div><div class="line">or</div><div class="line">7 -&gt; 6 -&gt; 3 -&gt; 2 -&gt; 1</div></pre></td></tr></table></figure></p>
+        <h1 id="59-Spiral-Matrix-II"><a href="#59-Spiral-Matrix-II" class="headerlink" title="59. Spiral Matrix II"></a>59. Spiral Matrix II</h1><p>Given an integer n, generate a square matrix filled with elements from 1 to n * n in spiral order.</p>
+<p>For example,<br>Given n = 3,</p>
+<p>You should return the following matrix:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line"> [ 1, 2, 3 ],</div><div class="line"> [ 8, 9, 4 ],</div><div class="line"> [ 7, 6, 5 ]</div><div class="line">]</div></pre></td></tr></table></figure></p>
 <p>Solution:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">integerReplacement</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">2147483647</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">32</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) &#123;</div><div class="line">            count += integerReplacement(n / <span class="number">2</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            count += min(integerReplacement(n - <span class="number">1</span>), integerReplacement(n + <span class="number">1</span>));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> count;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> n1, <span class="keyword">int</span> n2)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> n1 &lt;= n2 ? n1 : n2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Another very elegant solution:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">integerReplacement</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> c = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (n != <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">if</span> ((n &amp; <span class="number">1</span>) == <span class="number">0</span>) &#123;</div><div class="line">            n &gt;&gt;&gt;= <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">3</span> || Integer.bitCount(n + <span class="number">1</span>) &gt; Integer.bitCount(n - <span class="number">1</span>)) &#123;</div><div class="line">            --n;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            ++n;</div><div class="line">        &#125;</div><div class="line">        ++c;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] generateMatrix(<span class="keyword">int</span> n) &#123;</div><div class="line">	<span class="keyword">int</span> currentNum = <span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span>[][] result = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</div><div class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> right = n - <span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span> down = n - <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (currentNum &lt;= n * n) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = left; i &lt;= right; i++) &#123;</div><div class="line">            result[top][i] = currentNum++;</div><div class="line">        &#125;</div><div class="line">        top++;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = top; i &lt;= down; i++) &#123;</div><div class="line">            result[i][right] = currentNum++;</div><div class="line">        &#125;</div><div class="line">        right--;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = right; i &gt;= left; i--) &#123;</div><div class="line">            result[down][i] = currentNum++;</div><div class="line">        &#125;</div><div class="line">        down--;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = down; i &gt;= top; i--) &#123;</div><div class="line">            result[i][left] = currentNum++;</div><div class="line">        &#125;</div><div class="line">        left++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -412,8 +412,8 @@ If n is even, replace n with n/2.If n is odd, you can replace n with either n + 
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/25/LeetCode-459-Repeated-Substring-Pattern/" rel="next" title="[LeetCode] 459. Repeated Substring Pattern">
-                <i class="fa fa-chevron-left"></i> [LeetCode] 459. Repeated Substring Pattern
+              <a href="/2016/12/25/LeetCode-242-Valid-Anagram/" rel="next" title="[LeetCode] 242. Valid Anagram">
+                <i class="fa fa-chevron-left"></i> [LeetCode] 242. Valid Anagram
               </a>
             
           </div>
@@ -421,10 +421,6 @@ If n is even, replace n with n/2.If n is odd, you can replace n with either n + 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/25/LeetCode-392-Is-Subsequence/" rel="prev" title="[LeetCode] 392. Is Subsequence">
-                [LeetCode] 392. Is Subsequence <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -449,7 +445,7 @@ If n is even, replace n with n/2.If n is odd, you can replace n with either n + 
 
            <section id="comments">
    <!-- 多说评论框 start -->
-<div id="ds-thread" class="ds-thread" data-thread-key="2016/12/25/LeetCode-397-Integer-Replacement/" data-title="[LeetCode] 397. Integer Replacement" data-url="http://yoursite.com/2016/12/25/LeetCode-397-Integer-Replacement/" }}"></div>
+<div id="ds-thread" class="ds-thread" data-thread-key="2016/12/25/LeetCode-59-Spiral-Matrix-II/" data-title="[LeetCode] 59. Spiral Matrix II" data-url="http://yoursite.com/2016/12/25/LeetCode-59-Spiral-Matrix-II/" }}"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -576,7 +572,7 @@ ds.charset = 'UTF-8';
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#397-Integer-Replacement"><span class="nav-number">1.</span> <span class="nav-text">397. Integer Replacement</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#59-Spiral-Matrix-II"><span class="nav-number">1.</span> <span class="nav-text">59. Spiral Matrix II</span></a></li></ol></div>
             
 
           </div>
