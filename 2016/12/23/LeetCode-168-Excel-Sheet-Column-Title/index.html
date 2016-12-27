@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="168. Excel Sheet Column TitleGiven a positive integer, return its corresponding column title as appear in an Excel sheet.For example:12345671 -&amp;gt; A2 -&amp;gt; B3 -&amp;gt; C...26 -&amp;gt; Z27 -&amp;gt; AA28 -&amp;gt;">
+<meta name="description" content="168. Excel Sheet Column TitleGiven a positive integer, return its corresponding column title as appear in an Excel sheet.
+For example:
+12345671 -&amp;gt; A2 -&amp;gt; B3 -&amp;gt; C...26 -&amp;gt; Z27 -&amp;gt; AA28 -&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode] 168. Excel Sheet Column Title">
 <meta property="og:url" content="http://yoursite.com/2016/12/23/LeetCode-168-Excel-Sheet-Column-Title/index.html">
 <meta property="og:site_name" content="KrayC's Blog">
-<meta property="og:description" content="168. Excel Sheet Column TitleGiven a positive integer, return its corresponding column title as appear in an Excel sheet.For example:12345671 -&amp;gt; A2 -&amp;gt; B3 -&amp;gt; C...26 -&amp;gt; Z27 -&amp;gt; AA28 -&amp;gt;">
-<meta property="og:updated_time" content="2016-12-23T15:54:27.000Z">
+<meta property="og:description" content="168. Excel Sheet Column TitleGiven a positive integer, return its corresponding column title as appear in an Excel sheet.
+For example:
+12345671 -&amp;gt; A2 -&amp;gt; B3 -&amp;gt; C...26 -&amp;gt; Z27 -&amp;gt; AA28 -&amp;gt">
+<meta property="og:updated_time" content="2016-12-27T11:50:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[LeetCode] 168. Excel Sheet Column Title">
-<meta name="twitter:description" content="168. Excel Sheet Column TitleGiven a positive integer, return its corresponding column title as appear in an Excel sheet.For example:12345671 -&amp;gt; A2 -&amp;gt; B3 -&amp;gt; C...26 -&amp;gt; Z27 -&amp;gt; AA28 -&amp;gt;">
+<meta name="twitter:description" content="168. Excel Sheet Column TitleGiven a positive integer, return its corresponding column title as appear in an Excel sheet.
+For example:
+12345671 -&amp;gt; A2 -&amp;gt; B3 -&amp;gt; C...26 -&amp;gt; Z27 -&amp;gt; AA28 -&amp;gt">
 
 
 
@@ -370,9 +376,11 @@
       
 
       
-        <h1 id="168-Excel-Sheet-Column-Title"><a href="#168-Excel-Sheet-Column-Title" class="headerlink" title="168. Excel Sheet Column Title"></a>168. Excel Sheet Column Title</h1><p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.<br>For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1 -&gt; A</div><div class="line">2 -&gt; B</div><div class="line">3 -&gt; C</div><div class="line">...</div><div class="line">26 -&gt; Z</div><div class="line">27 -&gt; AA</div><div class="line">28 -&gt; AB </div></pre></td></tr></table></figure></p>
-<p>Solution:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;  </div><div class="line">    <span class="keyword">return</span> n &gt; <span class="number">26</span> ? convertToTitle((n - <span class="number">1</span>) / <span class="number">26</span>) + (<span class="keyword">char</span>) (n - (<span class="keyword">int</span>) ((n - <span class="number">1</span>) / <span class="number">26</span>) * <span class="number">26</span> + <span class="number">64</span>) : (<span class="keyword">char</span>) (n + <span class="number">64</span>) + <span class="string">""</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
+        <h1 id="168-Excel-Sheet-Column-Title"><a href="#168-Excel-Sheet-Column-Title" class="headerlink" title="168. Excel Sheet Column Title"></a>168. Excel Sheet Column Title</h1><p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
+<p>For example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1 -&gt; A</div><div class="line">2 -&gt; B</div><div class="line">3 -&gt; C</div><div class="line">...</div><div class="line">26 -&gt; Z</div><div class="line">27 -&gt; AA</div><div class="line">28 -&gt; AB </div></pre></td></tr></table></figure>
+<p>Solution:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;  </div><div class="line">    <span class="keyword">return</span> n &gt; <span class="number">26</span> ? convertToTitle((n - <span class="number">1</span>) / <span class="number">26</span>) + (<span class="keyword">char</span>) (n - (<span class="keyword">int</span>) ((n - <span class="number">1</span>) / <span class="number">26</span>) * <span class="number">26</span> + <span class="number">64</span>) : (<span class="keyword">char</span>) (n + <span class="number">64</span>) + <span class="string">""</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -496,7 +504,7 @@ ds.charset = 'UTF-8';
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="38. Count and SayThe count-and-say sequence is the sequence of integers beginning as follows:1, 11, 21, 1211, 111221, …
-1 is read off as “one 1” or 11.11 is read off as “two 1s” or 21.21 is read off a">
+<meta name="description" content="215. Kth Largest Element in an ArrayFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+For example,Given [3,2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 38. Count and Say">
-<meta property="og:url" content="http://yoursite.com/2016/12/26/LeetCode-38-Count-and-Say/index.html">
+<meta property="og:title" content="[LeetCode] 215. Kth Largest Element in an Array">
+<meta property="og:url" content="http://yoursite.com/2016/12/27/LeetCode-215-Kth-Largest-Element-in-an-Array/index.html">
 <meta property="og:site_name" content="KrayC's Blog">
-<meta property="og:description" content="38. Count and SayThe count-and-say sequence is the sequence of integers beginning as follows:1, 11, 21, 1211, 111221, …
-1 is read off as “one 1” or 11.11 is read off as “two 1s” or 21.21 is read off a">
-<meta property="og:updated_time" content="2016-12-26T09:35:44.000Z">
+<meta property="og:description" content="215. Kth Largest Element in an ArrayFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+For example,Given [3,2">
+<meta property="og:updated_time" content="2016-12-27T11:02:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 38. Count and Say">
-<meta name="twitter:description" content="38. Count and SayThe count-and-say sequence is the sequence of integers beginning as follows:1, 11, 21, 1211, 111221, …
-1 is read off as “one 1” or 11.11 is read off as “two 1s” or 21.21 is read off a">
+<meta name="twitter:title" content="[LeetCode] 215. Kth Largest Element in an Array">
+<meta name="twitter:description" content="215. Kth Largest Element in an ArrayFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+For example,Given [3,2">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/26/LeetCode-38-Count-and-Say/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/27/LeetCode-215-Kth-Largest-Element-in-an-Array/"/>
 
 
 
 
 
-  <title> [LeetCode] 38. Count and Say | KrayC's Blog </title>
+  <title> [LeetCode] 215. Kth Largest Element in an Array | KrayC's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/26/LeetCode-38-Count-and-Say/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/27/LeetCode-215-Kth-Largest-Element-in-an-Array/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="KrayC">
@@ -295,7 +295,7 @@
             
             
               
-                [LeetCode] 38. Count and Say
+                [LeetCode] 215. Kth Largest Element in an Array
               
             
           </h1>
@@ -308,8 +308,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-26T17:33:53+08:00">
-                2016-12-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-27T18:59:43+08:00">
+                2016-12-27
               </time>
             
 
@@ -342,8 +342,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/26/LeetCode-38-Count-and-Say/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/26/LeetCode-38-Count-and-Say/" itemprop="commentCount"></span>
+                <a href="/2016/12/27/LeetCode-215-Kth-Largest-Element-in-an-Array/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/27/LeetCode-215-Kth-Largest-Element-in-an-Array/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,11 +373,13 @@
       
 
       
-        <h1 id="38-Count-and-Say"><a href="#38-Count-and-Say" class="headerlink" title="38. Count and Say"></a>38. Count and Say</h1><p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …</p>
-<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.</p>
-<p>Note: The sequence of integers will be represented as a string.</p>
+        <h1 id="215-Kth-Largest-Element-in-an-Array"><a href="#215-Kth-Largest-Element-in-an-Array" class="headerlink" title="215. Kth Largest Element in an Array"></a>215. Kth Largest Element in an Array</h1><p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
+<p>For example,<br>Given [3,2,1,5,6,4] and k = 2, return 5.</p>
+<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ array’s length.</p>
 <p>Solution:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    String i = <span class="string">"1"</span>;</div><div class="line">    <span class="keyword">while</span> (n &gt; <span class="number">1</span>) &#123;</div><div class="line">        i = generateNext(i);</div><div class="line">        n--;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> i;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> String <span class="title">generateNext</span><span class="params">(String num)</span> </span>&#123;</div><div class="line">    String result = <span class="string">""</span>;</div><div class="line">    <span class="keyword">int</span> currentNum = num.charAt(<span class="number">0</span>) - <span class="number">48</span>;</div><div class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span> (num.length() == <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> count + <span class="string">""</span> + currentNum;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; num.length(); i++) &#123;</div><div class="line">        <span class="keyword">if</span> (num.charAt(i) - <span class="number">48</span> == currentNum) &#123;</div><div class="line">            count++;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            result = result + count + <span class="string">""</span> + currentNum;</div><div class="line">            count = <span class="number">1</span>;</div><div class="line">            currentNum = num.charAt(i) - <span class="number">48</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (i == num.length() - <span class="number">1</span>) &#123;</div><div class="line">            result = result + count + <span class="string">""</span> + currentNum;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (nums[j + <span class="number">1</span>] &lt; nums[j]) &#123;</div><div class="line">                <span class="keyword">int</span> temp = nums[j];</div><div class="line">                nums[j] = nums[j + <span class="number">1</span>];</div><div class="line">                nums[j + <span class="number">1</span>] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> nums[nums.length - k];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Other solution using Quick Select:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> n = a.length;</div><div class="line">    <span class="keyword">int</span> p = quickSelect(a, <span class="number">0</span>, n - <span class="number">1</span>, n - k + <span class="number">1</span>);</div><div class="line">    <span class="keyword">return</span> a[p];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// return the index of the kth smallest number</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">quickSelect</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">    <span class="comment">// use quick sort's idea</span></div><div class="line">    <span class="comment">// put nums that are &lt;= pivot to the left</span></div><div class="line">    <span class="comment">// put nums that are  &gt; pivot to the right</span></div><div class="line">    <span class="keyword">int</span> i = lo, j = hi, pivot = a[hi];</div><div class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</div><div class="line">        <span class="keyword">if</span> (a[i++] &gt; pivot) swap(a, --i, --j);</div><div class="line">    &#125;</div><div class="line">    swap(a, i, hi);</div><div class="line"></div><div class="line">    <span class="comment">// count the nums that are &lt;= pivot from lo</span></div><div class="line">    <span class="keyword">int</span> m = i - lo + <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">// pivot is the one!</span></div><div class="line">    <span class="keyword">if</span> (m == k) <span class="keyword">return</span> i;</div><div class="line">        <span class="comment">// pivot is too big, so it must be on the left</span></div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (m &gt; k) <span class="keyword">return</span> quickSelect(a, lo, i - <span class="number">1</span>, k);</div><div class="line">        <span class="comment">// pivot is too small, so it must be on the right</span></div><div class="line">    <span class="keyword">else</span> <span class="keyword">return</span> quickSelect(a, i + <span class="number">1</span>, hi, k - m);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> tmp = a[i];</div><div class="line">    a[i] = a[j];</div><div class="line">    a[j] = tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -409,8 +411,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/25/LeetCode-59-Spiral-Matrix-II/" rel="next" title="[LeetCode] 59. Spiral Matrix II">
-                <i class="fa fa-chevron-left"></i> [LeetCode] 59. Spiral Matrix II
+              <a href="/2016/12/27/LeetCode-151-Reverse-Words-in-a-String/" rel="next" title="[LeetCode] 151. Reverse Words in a String">
+                <i class="fa fa-chevron-left"></i> [LeetCode] 151. Reverse Words in a String
               </a>
             
           </div>
@@ -419,8 +421,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/26/LeetCode-58-Length-of-Last-Word/" rel="prev" title="[LeetCode] 58. Length of Last Word">
-                [LeetCode] 58. Length of Last Word <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/27/LeetCode-60-Permutation-Sequence/" rel="prev" title="[LeetCode] 60. Permutation Sequence">
+                [LeetCode] 60. Permutation Sequence <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -446,7 +448,7 @@
 
            <section id="comments">
    <!-- 多说评论框 start -->
-<div id="ds-thread" class="ds-thread" data-thread-key="2016/12/26/LeetCode-38-Count-and-Say/" data-title="[LeetCode] 38. Count and Say" data-url="http://yoursite.com/2016/12/26/LeetCode-38-Count-and-Say/" }}"></div>
+<div id="ds-thread" class="ds-thread" data-thread-key="2016/12/27/LeetCode-215-Kth-Largest-Element-in-an-Array/" data-title="[LeetCode] 215. Kth Largest Element in an Array" data-url="http://yoursite.com/2016/12/27/LeetCode-215-Kth-Largest-Element-in-an-Array/" }}"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -573,7 +575,7 @@ ds.charset = 'UTF-8';
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#38-Count-and-Say"><span class="nav-number">1.</span> <span class="nav-text">38. Count and Say</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#215-Kth-Largest-Element-in-an-Array"><span class="nav-number">1.</span> <span class="nav-text">215. Kth Largest Element in an Array</span></a></li></ol></div>
             
 
           </div>
