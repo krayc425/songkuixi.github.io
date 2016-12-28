@@ -86,13 +86,13 @@
 
 <meta name="description" content="383. Ransom NoteGiven an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from th">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 383. Ransom Note">
+<meta property="og:title" content="[LeetCode] 383. Ransom Note">
 <meta property="og:url" content="http://yoursite.com/2016/12/27/LeetCode-383-Ransom-Note/index.html">
 <meta property="og:site_name" content="KrayC's Blog">
 <meta property="og:description" content="383. Ransom NoteGiven an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from th">
-<meta property="og:updated_time" content="2016-12-27T12:00:11.000Z">
+<meta property="og:updated_time" content="2016-12-27T12:00:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 383. Ransom Note">
+<meta name="twitter:title" content="[LeetCode] 383. Ransom Note">
 <meta name="twitter:description" content="383. Ransom NoteGiven an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from th">
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title> LeetCode 383. Ransom Note | KrayC's Blog </title>
+  <title> [LeetCode] 383. Ransom Note | KrayC's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -292,7 +292,7 @@
             
             
               
-                LeetCode 383. Ransom Note
+                [LeetCode] 383. Ransom Note
               
             
           </h1>
@@ -373,6 +373,7 @@
         <h1 id="383-Ransom-Note"><a href="#383-Ransom-Note" class="headerlink" title="383. Ransom Note"></a>383. Ransom Note</h1><p>Given an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from the magazines ; otherwise, it will return false.</p>
 <p>Each letter in the magazine string can only be used once in your ransom note.</p>
 <p>Note:<br>You may assume that both strings contain only lowercase letters.</p>
+<p>Example:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">canConstruct(&quot;a&quot;, &quot;b&quot;) -&gt; false</div><div class="line">canConstruct(&quot;aa&quot;, &quot;ab&quot;) -&gt; false</div><div class="line">canConstruct(&quot;aa&quot;, &quot;aab&quot;) -&gt; true</div></pre></td></tr></table></figure>
 <p>Solution:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canConstruct</span><span class="params">(String ransomNote, String magazine)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (ransomNote.length() &gt; magazine.length()) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span>[] letters = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ransomNote.length(); i++) &#123;</div><div class="line">        letters[ransomNote.charAt(i) - <span class="string">'a'</span>]++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; magazine.length(); i++) &#123;</div><div class="line">        letters[magazine.charAt(i) - <span class="string">'a'</span>]--;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i : letters) &#123;</div><div class="line">        <span class="keyword">if</span> (i &gt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -417,6 +418,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/12/28/LeetCode-202-Happy-Number/" rel="prev" title="[LeetCode] 202. Happy Number">
+                [LeetCode] 202. Happy Number <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -440,7 +445,7 @@
 
            <section id="comments">
    <!-- 多说评论框 start -->
-<div id="ds-thread" class="ds-thread" data-thread-key="2016/12/27/LeetCode-383-Ransom-Note/" data-title="LeetCode 383. Ransom Note" data-url="http://yoursite.com/2016/12/27/LeetCode-383-Ransom-Note/" }}"></div>
+<div id="ds-thread" class="ds-thread" data-thread-key="2016/12/27/LeetCode-383-Ransom-Note/" data-title="[LeetCode] 383. Ransom Note" data-url="http://yoursite.com/2016/12/27/LeetCode-383-Ransom-Note/" }}"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -495,7 +500,7 @@ ds.charset = 'UTF-8';
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">30</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
