@@ -269,6 +269,592 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/26/LeetCode-38-Count-and-Say/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="KrayC">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/image/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="KrayC's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="KrayC's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/26/LeetCode-38-Count-and-Say/" itemprop="url">
+                  [LeetCode] 38. Count and Say
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-26T17:33:53+08:00">
+                2016-12-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/26/LeetCode-38-Count-and-Say/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/26/LeetCode-38-Count-and-Say/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="38-Count-and-Say"><a href="#38-Count-and-Say" class="headerlink" title="38. Count and Say"></a>38. Count and Say</h1><p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …</p>
+<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.</p>
+<p>Note: The sequence of integers will be represented as a string.</p>
+<p>Solution:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    String i = <span class="string">"1"</span>;</div><div class="line">    <span class="keyword">while</span> (n &gt; <span class="number">1</span>) &#123;</div><div class="line">        i = generateNext(i);</div><div class="line">        n--;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> i;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> String <span class="title">generateNext</span><span class="params">(String num)</span> </span>&#123;</div><div class="line">    String result = <span class="string">""</span>;</div><div class="line">    <span class="keyword">int</span> currentNum = num.charAt(<span class="number">0</span>) - <span class="number">48</span>;</div><div class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span> (num.length() == <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> count + <span class="string">""</span> + currentNum;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; num.length(); i++) &#123;</div><div class="line">        <span class="keyword">if</span> (num.charAt(i) - <span class="number">48</span> == currentNum) &#123;</div><div class="line">            count++;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            result = result + count + <span class="string">""</span> + currentNum;</div><div class="line">            count = <span class="number">1</span>;</div><div class="line">            currentNum = num.charAt(i) - <span class="number">48</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (i == num.length() - <span class="number">1</span>) &#123;</div><div class="line">            result = result + count + <span class="string">""</span> + currentNum;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/25/LeetCode-59-Spiral-Matrix-II/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="KrayC">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/image/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="KrayC's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="KrayC's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/25/LeetCode-59-Spiral-Matrix-II/" itemprop="url">
+                  [LeetCode] 59. Spiral Matrix II
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T22:14:39+08:00">
+                2016-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/25/LeetCode-59-Spiral-Matrix-II/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/25/LeetCode-59-Spiral-Matrix-II/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="59-Spiral-Matrix-II"><a href="#59-Spiral-Matrix-II" class="headerlink" title="59. Spiral Matrix II"></a>59. Spiral Matrix II</h1><p>Given an integer n, generate a square matrix filled with elements from 1 to n * n in spiral order.</p>
+<p>For example,<br>Given n = 3,</p>
+<p>You should return the following matrix:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line"> [ 1, 2, 3 ],</div><div class="line"> [ 8, 9, 4 ],</div><div class="line"> [ 7, 6, 5 ]</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>Solution:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] generateMatrix(<span class="keyword">int</span> n) &#123;</div><div class="line">    <span class="keyword">int</span> currentNum = <span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span>[][] result = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</div><div class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> right = n - <span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span> down = n - <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (currentNum &lt;= n * n) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = left; i &lt;= right; i++) &#123;</div><div class="line">            result[top][i] = currentNum++;</div><div class="line">        &#125;</div><div class="line">        top++;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = top; i &lt;= down; i++) &#123;</div><div class="line">            result[i][right] = currentNum++;</div><div class="line">        &#125;</div><div class="line">        right--;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = right; i &gt;= left; i--) &#123;</div><div class="line">            result[down][i] = currentNum++;</div><div class="line">        &#125;</div><div class="line">        down--;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = down; i &gt;= top; i--) &#123;</div><div class="line">            result[i][left] = currentNum++;</div><div class="line">        &#125;</div><div class="line">        left++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/25/LeetCode-242-Valid-Anagram/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="KrayC">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/image/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="KrayC's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="KrayC's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/25/LeetCode-242-Valid-Anagram/" itemprop="url">
+                  [LeetCode] 242. Valid Anagram
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T21:34:23+08:00">
+                2016-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/25/LeetCode-242-Valid-Anagram/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/25/LeetCode-242-Valid-Anagram/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="242-Valid-Anagram"><a href="#242-Valid-Anagram" class="headerlink" title="242. Valid Anagram"></a>242. Valid Anagram</h1><p>Given two strings s and t, write a function to determine if t is an anagram of s.</p>
+<p>For example,<br>s = “anagram”, t = “nagaram”, return true.<br>s = “rat”, t = “car”, return false.</p>
+<p>Note:<br>You may assume the string contains only lowercase alphabets.</p>
+<p>Follow up:<br>What if the inputs contain unicode characters? How would you adapt your solution to such case?</p>
+<p>Solution:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnagram</span><span class="params">(String s, String t)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span>(s.length() != t.length())&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> letters[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</div><div class="line">        letters[s.charAt(i) - <span class="number">97</span>]++;</div><div class="line">        letters[t.charAt(i) - <span class="number">97</span>]--;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</div><div class="line">        <span class="keyword">if</span>(letters[i] != <span class="number">0</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/25/LeetCode-392-Is-Subsequence/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="KrayC">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/image/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="KrayC's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="KrayC's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/25/LeetCode-392-Is-Subsequence/" itemprop="url">
+                  [LeetCode] 392. Is Subsequence
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T21:24:48+08:00">
+                2016-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/25/LeetCode-392-Is-Subsequence/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/25/LeetCode-392-Is-Subsequence/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="392-Is-Subsequence"><a href="#392-Is-Subsequence" class="headerlink" title="392. Is Subsequence"></a>392. Is Subsequence</h1><p>Given a string s and a string t, check if s is subsequence of t.</p>
+<p>You may assume that there is only lower case English letters in both s and t. t is potentially a very long (length ~= 500,000) string, and s is a short string (&lt;=100).</p>
+<p>A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, “ace” is a subsequence of “abcde” while “aec” is not).</p>
+<p>Example 1:<br>s = “abc”, t = “ahbgdc”</p>
+<p>Return true.</p>
+<p>Example 2:<br>s = “axc”, t = “ahbgdc”</p>
+<p>Return false.</p>
+<p>Follow up:<br>If there are lots of incoming S, say S1, S2, … , Sk where k &gt;= 1B, and you want to check one by one to see if T has its subsequence. In this scenario, how would you change your code?</p>
+<p>Solution:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String s, String t)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span>(s.length() == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> iS = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> iT = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(iT &lt; t.length())&#123;</div><div class="line">        <span class="keyword">if</span>(t.charAt(iT) == s.charAt(iS))&#123;</div><div class="line">            iS++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(iS == s.length())&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        iT++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>And a 3-line-C solution:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isSubsequence</span><span class="params">(<span class="keyword">char</span>* s, <span class="keyword">char</span>* t)</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span> (*t)</div><div class="line">        s += *s == *t++;</div><div class="line">    <span class="keyword">return</span> !*s;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Sometimes C makes thing easier :D</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/25/LeetCode-397-Integer-Replacement/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1135,579 +1721,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/24/LeetCode-228-Summary-Ranges/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="KrayC">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/avatar.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="KrayC's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="KrayC's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/24/LeetCode-228-Summary-Ranges/" itemprop="url">
-                  [LeetCode] 228. Summary Ranges
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-24T00:21:15+08:00">
-                2016-12-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/24/LeetCode-228-Summary-Ranges/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/24/LeetCode-228-Summary-Ranges/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="228-Summary-Ranges"><a href="#228-Summary-Ranges" class="headerlink" title="228. Summary Ranges"></a>228. Summary Ranges</h1><p>Given a sorted integer array without duplicates, return the summary of its ranges.<br>For example, given<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[0,1,2,4,5,7]</div></pre></td></tr></table></figure>  </p>
-<p>return<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[&quot;0-&gt;2&quot;,&quot;4-&gt;5&quot;,&quot;7&quot;]</div></pre></td></tr></table></figure></p>
-<p>Solution:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">summaryRanges</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    List&lt;String&gt; resultList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (i &lt; nums.length) &#123;</div><div class="line">        <span class="keyword">int</span> start = nums[i];</div><div class="line">        <span class="keyword">int</span> end;</div><div class="line"></div><div class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (i == nums.length - <span class="number">1</span> || nums[i + <span class="number">1</span>] != nums[i] + <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                i++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        end = nums[i];</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (start != end) &#123;</div><div class="line">            resultList.add(start + <span class="string">"-&gt;"</span> + end);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            resultList.add(start + <span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        i++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> resultList;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/LeetCode-168-Excel-Sheet-Column-Title/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="KrayC">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/avatar.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="KrayC's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="KrayC's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/23/LeetCode-168-Excel-Sheet-Column-Title/" itemprop="url">
-                  [LeetCode] 168. Excel Sheet Column Title
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-23T23:48:19+08:00">
-                2016-12-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/23/LeetCode-168-Excel-Sheet-Column-Title/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/LeetCode-168-Excel-Sheet-Column-Title/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="168-Excel-Sheet-Column-Title"><a href="#168-Excel-Sheet-Column-Title" class="headerlink" title="168. Excel Sheet Column Title"></a>168. Excel Sheet Column Title</h1><p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
-<p>For example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1 -&gt; A</div><div class="line">2 -&gt; B</div><div class="line">3 -&gt; C</div><div class="line">...</div><div class="line">26 -&gt; Z</div><div class="line">27 -&gt; AA</div><div class="line">28 -&gt; AB </div></pre></td></tr></table></figure>
-<p>Solution:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;  </div><div class="line">    <span class="keyword">return</span> n &gt; <span class="number">26</span> ? convertToTitle((n - <span class="number">1</span>) / <span class="number">26</span>) + (<span class="keyword">char</span>) (n - (<span class="keyword">int</span>) ((n - <span class="number">1</span>) / <span class="number">26</span>) * <span class="number">26</span> + <span class="number">64</span>) : (<span class="keyword">char</span>) (n + <span class="number">64</span>) + <span class="string">""</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/21/计算平均学分绩/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="KrayC">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/avatar.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="KrayC's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="KrayC's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/21/计算平均学分绩/" itemprop="url">
-                  计算平均学分绩
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-21T20:27:08+08:00">
-                2016-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/21/计算平均学分绩/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/21/计算平均学分绩/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>前阵子学习 python，先做了一个最简单的算平均学分绩的程序，在此分享。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding=utf-8</span></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> cookielib</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> string</div><div class="line"></div><div class="line"><span class="comment">#  保存并读取 cookie</span></div><div class="line">filename = <span class="string">'cookie.txt'</span></div><div class="line"><span class="comment"># 声明一个MozillaCookieJar对象实例来保存cookie，之后写入文件</span></div><div class="line">cookie = cookielib.MozillaCookieJar(filename)</div><div class="line">opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))</div><div class="line"></div><div class="line">postdata = urllib.urlencode(&#123;</div><div class="line">    <span class="string">'userName'</span>: <span class="string">'教务网账号'</span>,</div><div class="line">    <span class="string">'password'</span>: <span class="string">'教务网密码'</span></div><div class="line">    &#125;)</div><div class="line"></div><div class="line"><span class="comment"># 登录教务系统的URL</span></div><div class="line">loginUrl = <span class="string">'http://jw.nju.edu.cn:8080/jiaowu/login.do'</span></div><div class="line"><span class="comment"># 模拟登录，并把cookie保存到变量</span></div><div class="line">result = opener.open(loginUrl, postdata)</div><div class="line"></div><div class="line"><span class="comment"># 保存cookie到cookie.txt中</span></div><div class="line">cookie.save(ignore_discard=<span class="keyword">True</span>, ignore_expires=<span class="keyword">True</span>)</div><div class="line"><span class="comment"># 成绩页面</span></div><div class="line">commonUrl = <span class="string">'http://jw.nju.edu.cn:8080/jiaowu/student/studentinfo/achievementinfo.do?method=searchTermList'</span></div><div class="line">commonPage = opener.open(commonUrl)</div><div class="line">termItems = re.findall(<span class="string">r'&lt;tr align="center" height="22"&gt;\s+&lt;td&gt;&lt;a  href="(.*?)".*?&lt;/a&gt; &lt;/td&gt;\s+&lt;/tr&gt;'</span>,</div><div class="line">                       commonPage.read())</div><div class="line"><span class="comment"># termItems.pop(0)</span></div><div class="line"></div><div class="line">totalGradePointSum = <span class="number">0.0</span></div><div class="line">totalPointSum = <span class="number">0.0</span></div><div class="line">scoreItems = []</div><div class="line"></div><div class="line"><span class="comment"># 对每一个学期的成绩统计</span></div><div class="line"><span class="keyword">for</span> item <span class="keyword">in</span> termItems:</div><div class="line">    gradePointSum = <span class="number">0.0</span></div><div class="line">    pointSum = <span class="number">0.0</span></div><div class="line">    <span class="comment"># 利用cookie请求访问另一个网址</span></div><div class="line">    gradeUrl = <span class="string">'http://jw.nju.edu.cn:8080/jiaowu/'</span> + item</div><div class="line">    <span class="comment"># 请求访问该网址</span></div><div class="line">    gradePage = opener.open(gradeUrl)</div><div class="line">    <span class="comment"># 正则表达式读取</span></div><div class="line">    detailScoreItems = re.findall(<span class="string">'&lt;td valign="middle"&gt;(.*?)&lt;/td&gt;.*?'</span></div><div class="line">                                  <span class="string">'&lt;td align="center" valign="middle"&gt;\s+(.*?)\s+&lt;/td&gt;.*?'</span></div><div class="line">                                  <span class="string">'&lt;td align="center" valign="middle"&gt;(.*?)&lt;/td&gt;.*?'</span></div><div class="line">                                  <span class="string">'&lt;td align="center" valign="middle"&gt;\s+&lt;ul\s+style="color:black"\s+&gt;\s+(.*?)\s+&lt;/ul&gt;\s+&lt;/td&gt;'</span>,</div><div class="line">                                  gradePage.read(), re.S)</div><div class="line">    <span class="comment"># 对每一项课程的成绩统计</span></div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> detailScoreItems:</div><div class="line">        <span class="keyword">print</span> <span class="string">'====='</span></div><div class="line">        <span class="keyword">print</span> item[<span class="number">0</span>]</div><div class="line">        <span class="keyword">print</span> item[<span class="number">1</span>]</div><div class="line">        <span class="keyword">print</span> item[<span class="number">2</span>]</div><div class="line">        <span class="keyword">print</span> item[<span class="number">3</span>]</div><div class="line">        <span class="keyword">if</span> item[<span class="number">2</span>] != <span class="string">''</span>:</div><div class="line">            gradePointSum += (string.atof(item[<span class="number">2</span>]) * string.atof(item[<span class="number">3</span>]))</div><div class="line">            pointSum += string.atof(item[<span class="number">2</span>])</div><div class="line">    scoreItems.append([gradePointSum / pointSum / <span class="number">20</span>, pointSum])</div><div class="line">    totalGradePointSum += gradePointSum</div><div class="line">    totalPointSum += pointSum</div><div class="line"></div><div class="line"><span class="comment"># 打印每一学期的GPA</span></div><div class="line"><span class="keyword">print</span> <span class="string">'====='</span></div><div class="line"><span class="keyword">print</span> <span class="string">'Each Term Grade Point:'</span></div><div class="line"><span class="keyword">for</span> item <span class="keyword">in</span> scoreItems:</div><div class="line">    <span class="keyword">print</span> item[<span class="number">0</span>], item[<span class="number">1</span>]</div><div class="line"><span class="comment"># 打印总GPA</span></div><div class="line"><span class="keyword">print</span> <span class="string">'====='</span></div><div class="line"><span class="keyword">print</span> <span class="string">'Total Grade Point:'</span></div><div class="line"><span class="keyword">print</span> (totalGradePointSum / totalPointSum) / <span class="number">20</span>, totalPointSum</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/19/关于橡皮鹿的100件小事/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="KrayC">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/avatar.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="KrayC's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="KrayC's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/19/关于橡皮鹿的100件小事/" itemprop="url">
-                  关于橡皮鹿的100件小事
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-19T21:59:38+08:00">
-                2016-12-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/滑滑鸡与橡皮鹿/" itemprop="url" rel="index">
-                    <span itemprop="name">滑滑鸡与橡皮鹿</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/19/关于橡皮鹿的100件小事/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/19/关于橡皮鹿的100件小事/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          The article has been encrypted, please enter your password to view.<br>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/19/关于橡皮鹿的100件小事/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1769,7 +1782,7 @@ ds.charset = 'UTF-8';
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">46</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
