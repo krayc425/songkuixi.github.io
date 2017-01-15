@@ -84,25 +84,22 @@
 
 
 
-<meta name="description" content="118. Pascal’s TriangleGiven numRows, generate the first numRows of Pascal’s triangle.
-For example, given numRows = 5,Return1234567[     [1],    [1,1],   [1,2,1],  [1,3,3,1], [1,4,6,4,1]]
+<meta name="description" content="118. Pascal’s TriangleGiven numRows, generate the first numRows of Pascal’s triangle.For example, given numRows = 5,Return1234567[     [1],    [1,1],   [1,2,1],  [1,3,3,1], [1,4,6,4,1]]
 Solution:
-123">
+1234">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode] 118. Pascals Triangle">
 <meta property="og:url" content="http://yoursite.com/2017/01/14/LeetCode-118-Pascal-s-Triangle/index.html">
 <meta property="og:site_name" content="KrayC's Blog">
-<meta property="og:description" content="118. Pascal’s TriangleGiven numRows, generate the first numRows of Pascal’s triangle.
-For example, given numRows = 5,Return1234567[     [1],    [1,1],   [1,2,1],  [1,3,3,1], [1,4,6,4,1]]
+<meta property="og:description" content="118. Pascal’s TriangleGiven numRows, generate the first numRows of Pascal’s triangle.For example, given numRows = 5,Return1234567[     [1],    [1,1],   [1,2,1],  [1,3,3,1], [1,4,6,4,1]]
 Solution:
-123">
-<meta property="og:updated_time" content="2017-01-14T15:02:11.000Z">
+1234">
+<meta property="og:updated_time" content="2017-01-14T15:02:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[LeetCode] 118. Pascals Triangle">
-<meta name="twitter:description" content="118. Pascal’s TriangleGiven numRows, generate the first numRows of Pascal’s triangle.
-For example, given numRows = 5,Return1234567[     [1],    [1,1],   [1,2,1],  [1,3,3,1], [1,4,6,4,1]]
+<meta name="twitter:description" content="118. Pascal’s TriangleGiven numRows, generate the first numRows of Pascal’s triangle.For example, given numRows = 5,Return1234567[     [1],    [1,1],   [1,2,1],  [1,3,3,1], [1,4,6,4,1]]
 Solution:
-123">
+1234">
 
 
 
@@ -379,8 +376,7 @@ Solution:
       
 
       
-        <h1 id="118-Pascal’s-Triangle"><a href="#118-Pascal’s-Triangle" class="headerlink" title="118. Pascal’s Triangle"></a>118. Pascal’s Triangle</h1><p>Given numRows, generate the first numRows of Pascal’s triangle.</p>
-<p>For example, given numRows = 5,<br>Return<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">     [1],</div><div class="line">    [1,1],</div><div class="line">   [1,2,1],</div><div class="line">  [1,3,3,1],</div><div class="line"> [1,4,6,4,1]</div><div class="line">]</div></pre></td></tr></table></figure></p>
+        <h1 id="118-Pascal’s-Triangle"><a href="#118-Pascal’s-Triangle" class="headerlink" title="118. Pascal’s Triangle"></a>118. Pascal’s Triangle</h1><p>Given numRows, generate the first numRows of Pascal’s triangle.<br>For example, given numRows = 5,<br>Return<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">     [1],</div><div class="line">    [1,1],</div><div class="line">   [1,2,1],</div><div class="line">  [1,3,3,1],</div><div class="line"> [1,4,6,4,1]</div><div class="line">]</div></pre></td></tr></table></figure></p>
 <p>Solution:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; generate(<span class="keyword">int</span> numRows) &#123;</div><div class="line">    List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numRows; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</div><div class="line">            ArrayList&lt;Integer&gt; integers = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">            integers.add(<span class="number">1</span>);</div><div class="line">            result.add(integers);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            ArrayList&lt;Integer&gt; integers = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">            ArrayList&lt;Integer&gt; prevInts = (ArrayList&lt;Integer&gt;) result.get(i - <span class="number">1</span>);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; prevInts.size(); j++) &#123;</div><div class="line">                <span class="keyword">if</span> (j == <span class="number">0</span>) &#123;</div><div class="line">                    integers.add(<span class="number">1</span>);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    integers.add(prevInts.get(j - <span class="number">1</span>) + prevInts.get(j));</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            integers.add(<span class="number">1</span>);</div><div class="line">            result.add(integers);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
@@ -423,6 +419,10 @@ Solution:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/15/LeetCode-448-Find-All-Numbers-Disappeared-in-an-Array/" rel="prev" title="[LeetCode] 448. Find All Numbers Disappeared in an Array">
+                [LeetCode] 448. Find All Numbers Disappeared in an Array <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -502,7 +502,7 @@ ds.charset = 'UTF-8';
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">48</span>
+              <span class="site-state-item-count">51</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
