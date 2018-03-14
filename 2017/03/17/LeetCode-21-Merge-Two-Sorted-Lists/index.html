@@ -88,15 +88,15 @@
 Solution:
 1234567891011121314151">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 21. Merge Two Sorted Lists">
+<meta property="og:title" content="[LeetCode] 21. Merge Two Sorted Lists">
 <meta property="og:url" content="http://yoursite.com/2017/03/17/LeetCode-21-Merge-Two-Sorted-Lists/index.html">
 <meta property="og:site_name" content="KrayC's Blog">
 <meta property="og:description" content="21. Merge Two Sorted ListsMerge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
 Solution:
 1234567891011121314151">
-<meta property="og:updated_time" content="2017-03-16T16:09:20.000Z">
+<meta property="og:updated_time" content="2017-03-17T12:43:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 21. Merge Two Sorted Lists">
+<meta name="twitter:title" content="[LeetCode] 21. Merge Two Sorted Lists">
 <meta name="twitter:description" content="21. Merge Two Sorted ListsMerge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
 Solution:
 1234567891011121314151">
@@ -133,7 +133,7 @@ Solution:
 
 
 
-  <title> LeetCode 21. Merge Two Sorted Lists | KrayC's Blog </title>
+  <title> [LeetCode] 21. Merge Two Sorted Lists | KrayC's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +298,7 @@ Solution:
             
             
               
-                LeetCode 21. Merge Two Sorted Lists
+                [LeetCode] 21. Merge Two Sorted Lists
               
             
           </h1>
@@ -378,7 +378,7 @@ Solution:
       
         <h1 id="21-Merge-Two-Sorted-Lists"><a href="#21-Merge-Two-Sorted-Lists" class="headerlink" title="21. Merge Two Sorted Lists"></a>21. Merge Two Sorted Lists</h1><p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
 <p>Solution:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">public</span> ListNode <span class="title">mergeTwoLists</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</div><div class="line">   <span class="keyword">if</span> (l1 == <span class="keyword">null</span>) &#123;</div><div class="line">       <span class="keyword">return</span> l2;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">if</span> (l2 == <span class="keyword">null</span>) &#123;</div><div class="line">       <span class="keyword">return</span> l1;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="keyword">if</span> (l1.next == <span class="keyword">null</span> || l2.next != <span class="keyword">null</span>) &#123;</div><div class="line">       ListNode listNode = <span class="keyword">new</span> ListNode(l1.val &lt; l2.val ? l1.val : l2.val);</div><div class="line">       listNode.next = <span class="keyword">new</span> ListNode(l1.val &lt; l2.val ? l2.val : l1.val);</div><div class="line">       <span class="keyword">return</span> listNode;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   ListNode node = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</div><div class="line">   ListNode head = node;</div><div class="line">   ListNode head1 = l1;</div><div class="line">   ListNode head2 = l2;</div><div class="line"></div><div class="line">   <span class="keyword">while</span> (head1 != <span class="keyword">null</span> &amp;&amp; head2 != <span class="keyword">null</span>) &#123;</div><div class="line">       node.next = <span class="keyword">new</span> ListNode(compareInt(head1.val, head2.val));</div><div class="line">       node = node.next;</div><div class="line">       <span class="keyword">if</span> (node.val == head1.val) &#123;</div><div class="line">           head1 = head1.next;</div><div class="line">       &#125; <span class="keyword">else</span> &#123;</div><div class="line">           head2 = head2.next;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">if</span> (head1 == <span class="keyword">null</span>) &#123;</div><div class="line">       node.next = head2;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">if</span> (head2 == <span class="keyword">null</span>) &#123;</div><div class="line">       node.next = head1;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> head.next;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">compareInt</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">   <span class="keyword">return</span> i &lt;= j ? i : j;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">mergeTwoLists</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</div><div class="line">   <span class="keyword">if</span> (l1 == <span class="keyword">null</span>) &#123;</div><div class="line">       <span class="keyword">return</span> l2;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">if</span> (l2 == <span class="keyword">null</span>) &#123;</div><div class="line">       <span class="keyword">return</span> l1;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="keyword">if</span> (l1.next == <span class="keyword">null</span> || l2.next != <span class="keyword">null</span>) &#123;</div><div class="line">       ListNode listNode = <span class="keyword">new</span> ListNode(l1.val &lt; l2.val ? l1.val : l2.val);</div><div class="line">       listNode.next = <span class="keyword">new</span> ListNode(l1.val &lt; l2.val ? l2.val : l1.val);</div><div class="line">       <span class="keyword">return</span> listNode;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   ListNode node = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</div><div class="line">   ListNode head = node;</div><div class="line">   ListNode head1 = l1;</div><div class="line">   ListNode head2 = l2;</div><div class="line"></div><div class="line">   <span class="keyword">while</span> (head1 != <span class="keyword">null</span> &amp;&amp; head2 != <span class="keyword">null</span>) &#123;</div><div class="line">       node.next = <span class="keyword">new</span> ListNode(compareInt(head1.val, head2.val));</div><div class="line">       node = node.next;</div><div class="line">       <span class="keyword">if</span> (node.val == head1.val) &#123;</div><div class="line">           head1 = head1.next;</div><div class="line">       &#125; <span class="keyword">else</span> &#123;</div><div class="line">           head2 = head2.next;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">if</span> (head1 == <span class="keyword">null</span>) &#123;</div><div class="line">       node.next = head2;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">if</span> (head2 == <span class="keyword">null</span>) &#123;</div><div class="line">       node.next = head1;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> head.next;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">compareInt</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">   <span class="keyword">return</span> i &lt;= j ? i : j;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -421,6 +421,10 @@ Solution:
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/03/17/LeetCode-35-Search-Insert-Position/" rel="prev" title="[LeetCode] 35. Search Insert Position">
+                [LeetCode] 35. Search Insert Position <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -444,7 +448,7 @@ Solution:
 
            <section id="comments">
    <!-- 多说评论框 start -->
-<div id="ds-thread" class="ds-thread" data-thread-key="2017/03/17/LeetCode-21-Merge-Two-Sorted-Lists/" data-title="LeetCode 21. Merge Two Sorted Lists" data-url="http://yoursite.com/2017/03/17/LeetCode-21-Merge-Two-Sorted-Lists/" }}"></div>
+<div id="ds-thread" class="ds-thread" data-thread-key="2017/03/17/LeetCode-21-Merge-Two-Sorted-Lists/" data-title="[LeetCode] 21. Merge Two Sorted Lists" data-url="http://yoursite.com/2017/03/17/LeetCode-21-Merge-Two-Sorted-Lists/" }}"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -499,7 +503,7 @@ ds.charset = 'UTF-8';
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">54</span>
+              <span class="site-state-item-count">56</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -592,7 +596,7 @@ ds.charset = 'UTF-8';
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
